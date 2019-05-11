@@ -1,0 +1,37 @@
+	<!-- Indicates that we are configuring with annotations -->
+	<!-- We have to enable in Configure Namespaces [x]context - http://www.springframework.org/schema/context -->
+	<!-- And in the Namespace Versions select the no version one: -->
+	<!-- http://www.springframework.org/schema/context/spring-context.xsd -->
+	<context:annotation-config />
+	<!--Where to start scanning for the annotations -->
+	<context:component-scan
+		base-package="com.pluralsight" />
+
+
+    <!-- There 3 types of annotations
+	 @Component = for regular components, any POJO
+	 
+     @Service("name") = business logic layer.
+                import org.springframework.stereotype.Service;
+     
+     @Repository ("name") = data layer, any interaction with the DB
+                            import org.springframework.stereotype.Repository;
+                            
+     ===Autowiring : import org.springframework.beans.factory.annotation.Autowired;
+     
+     ===Autowired Member Variable==
+     @Autowired
+     private MyClass myClass{}
+     
+     ===Autowired Setter Injection===
+     CustomerRespository cr;
+     @Autowired
+     public void setCustomer( CustomerRepository cr) {
+       this.cr = cr;
+     }
+     
+     ===Autowired Constructor Injection===
+     very similar to setter injection
+     @Autowired
+     public A() {}
+     -->
