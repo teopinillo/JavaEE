@@ -1,0 +1,30 @@
+<!--Setter Injection-->
+<!--Create the file applicationContext.xml-->
+<!--In folder src/main/resources > right click > new > Other > Spring Bean Configuration File-->
+<!--and create beans for the classes that uses "new"-->
+
+<bean name="a" class="com.example.A" />
+
+<bean name="b" class="com.example.B"
+      <property name="refA" ref="a">
+      </property>
+</bean>
+
+<!--java code
+ public class A{ }
+
+ public class B {
+   private A refA;
+   
+   public void setRefA ( A a ){
+     refA = a;
+   }
+ 
+ }
+ 
+ //whenerver we want to use A
+ ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+		A refA = appContext.getBean("b", B.class);
+
+//end of java code-->
+
