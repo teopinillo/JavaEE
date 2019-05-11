@@ -1,0 +1,18 @@
+Autowiring
+
+ Four types
+  1. byType : Allows a property to be auto wire if exactly one bean of that property type exists
+              within the continer.
+     <bean name="a" class="com.example.A" autowire="byType">
+
+  2. byName : Same that byType, but use the name
+     <bean name="a" class="com.example.A" autowire="byName">
+
+  3. byConstructor : Similar to byType
+       <bean name="a" class="com.example.A" autowire="constructor">
+
+  4. no : no autowire
+
+  
+
+  
